@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "834165016076",
+    "firebase_url": "https://countdowntimer-26876.firebaseio.com",
+    "project_id": "countdowntimer-26876",
+    "storage_bucket": "countdowntimer-26876.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834165016076:android:4c12504cb5e74d3a",
+        "android_client_info": {
+          "package_name": "com.ota.countdowntimer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834165016076-su8d9q83he9ch6cfpk7putb1gnmen0vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ota.countdowntimer",
+            "certificate_hash": "aa256391612b73280ec2662d8c928867d50163a2"
+          }
+        },
+        {
+          "client_id": "834165016076-2hud6opnnsbp5rii6dbq2oe4mu9vhu39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdk7Kzx5NZKb6VQ8p8Nn715GXmy3zNnkw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834165016076-2hud6opnnsbp5rii6dbq2oe4mu9vhu39.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
