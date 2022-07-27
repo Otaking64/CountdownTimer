@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00"
-        android:textColor="@color/White"
         android:textSize="64sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,11 +24,6 @@
         android:ems="10"
         android:inputType="number"
         android:text="10"
-        android:textColor="@color/White"
-        android:textColorHighlight="@color/White"
-        android:textColorHint="@color/White"
-        android:textColorLink="@color/White"
-        android:textCursorDrawable="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -69,9 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:text="Pause"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTextField"
-        tools:layout_editor_absoluteX="136dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
