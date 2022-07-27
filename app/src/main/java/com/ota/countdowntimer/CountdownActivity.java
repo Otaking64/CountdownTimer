@@ -1,11 +1,20 @@
 package com.ota.countdowntimer;
 
 import android.animation.ObjectAnimator;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.CountDownTimer;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -22,11 +31,13 @@ public class CountdownActivity extends AppCompatActivity {
     private Button setTimeButton;
     private EditText NumberField;
     private Button pauseButton;
+    private String ALARMS = "alarms";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countdown);
+        createNotificationChannel();
 
         mTextField = findViewById(R.id.mainTextField);
         setTimeButton = findViewById(R.id.setTimerBtn);
@@ -105,11 +116,28 @@ public class CountdownActivity extends AppCompatActivity {
                     }
                 });
                 dialog.show();
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), ALARMS)
+                        .setSmallIcon(R.drawable.circular)
+                        .setContentTitle("Contdown Timer")
+                        .setContentText("Your timer finished!");
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+                notificationManager.notify(1, builder.build());
             }
         }.start();
 
 
     }
-
-
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.alarm);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(ALARMS, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 }
